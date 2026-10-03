@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --color-lime-400: #E4FF30;
+  --color-blue-400: #6EACDA;
+  --color-blue-500: #008BFF;
+  --color-purple-400: #b08dff;
+  --color-purple-500: #5B23FF;
+  --color-purple-800: #362F4F;
+  --color-cream-200: #E2E2B6;
+  --color-navy-600: #0959aa;
+  --color-navy-700: #064585;
+  --color-navy-800: #03346E;
+  --color-navy-900: #021526;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-navy-900);
+    color: var(--color-cream-200);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .card-hover {
+    transition-property: all;
+    transition-duration: 300ms;
+  }
+  .card-hover:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transform: translateY(-0.25rem);
+  }
+}
