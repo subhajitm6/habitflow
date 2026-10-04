@@ -15,7 +15,7 @@ dist-ssr
 # Environment variables
 .env
 .env.*
-!.env.example
+.env.example
 
 # Editor directories and files
 .vscode/*
@@ -36,3 +36,4 @@ venv/
 env/
 .pytest_cache/
 alembic.ini
+
