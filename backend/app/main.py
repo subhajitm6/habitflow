@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.routers import auth, habits, analytics
@@ -24,3 +24,8 @@ app.include_router(analytics.dashboard_router, prefix="/api/dashboard", tags=["D
 @app.get("/")
 def read_root():
     return {"message": "Welcome to Habit Tracker API"}
+
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    return Response(status_code=204)
+

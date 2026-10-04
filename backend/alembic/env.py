@@ -30,7 +30,10 @@ import app.models.habit_completion
 target_metadata = Base.metadata
 
 # Override sqlalchemy.url from .env
-config.set_main_option("sqlalchemy.url", os.environ["DATABASE_URL"])
+db_url = os.environ.get("DIRECT_URL", os.environ.get("DATABASE_URL"))
+if db_url:
+    db_url = db_url.replace("%", "%%")
+config.set_main_option("sqlalchemy.url", db_url)
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
